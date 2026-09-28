@@ -1,0 +1,7 @@
+MIMIC S4 hard QC
+================
+H92_analysis_base_all.csv            1741 rows, 189 hospital deaths
+H93_primary_FI_analysis_cohort.csv   1666 rows, 183 hospital deaths
+H94_primary_model_completecase.csv   1665 rows, 183 hospital deaths
+
+If any value differs, do not use the regenerated files for analysis.

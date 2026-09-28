@@ -1,0 +1,35 @@
+S4 SICdb — FINAL EXACT REPRODUCTION REPORT
+==========================================
+
+STATUS
+------
+PASS — SICdb raw-to-analytic reconstruction is closed.
+
+FINAL LOCKED COUNTS
+-------------------
+All AIS cohort: n=33; hospital deaths=9
+Primary FI-valid cohort: n=30; hospital deaths=8
+Available-covariate complete-case cohort: n=30
+locked_counts_pass=1
+all_exact_fullrow_pass=1
+
+EXACT FROZEN VALIDATION
+-----------------------
+SICdb_20_primary_AIS: candidate=33, frozen=33, overlap=33, extra=0, missing=0, full-row mismatches=0, ID pass=1, full-row pass=1
+SICdb_30_FI_Lab_variants: candidate=66, frozen=66, overlap=66, extra=0, missing=0, full-row mismatches=0, ID pass=1, full-row pass=1
+SICdb_40_chronic_proxy: candidate=33, frozen=33, overlap=33, extra=0, missing=0, full-row mismatches=0, ID pass=1, full-row pass=1
+SICdb_41_firstday_support: candidate=33, frozen=33, overlap=33, extra=0, missing=0, full-row mismatches=0, ID pass=1, full-row pass=1
+SICdb_42_analysis_base_all: candidate=33, frozen=33, overlap=33, extra=0, missing=0, full-row mismatches=0, ID pass=1, full-row pass=1
+SICdb_42_primary_FI: candidate=30, frozen=30, overlap=30, extra=0, missing=0, full-row mismatches=0, ID pass=1, full-row pass=1
+SICdb_42_available_completecase: candidate=30, frozen=30, overlap=30, extra=0, missing=0, full-row mismatches=0, ID pass=1, full-row pass=1
+
+KEY RECOVERED DEFINITIONS
+-------------------------
+- Adult principal AIS: AgeOnAdmission >=18 and ICD10Main I63*.
+- First qualifying admission per PatientID: earliest OffsetAfterFirstAdmission, CaseID tie-breaker.
+- Core-18 lab window: ICUOffset -6 h to ICUOffset +24 h, earliest value.
+- Primary lab mapping: preferred_strict; central_plus_BGA_fallback is sensitivity only.
+- FI-Lab valid with >=15 evaluable Core-18 items.
+- Exact frozen per-0.1 computation: (n_deficits * 10.0) / n_evaluable.
+- SICdb chronic variable is a partial available-domain proxy, not a harmonized CCI.
+- SICdb role is exploratory FI-Lab transportability.

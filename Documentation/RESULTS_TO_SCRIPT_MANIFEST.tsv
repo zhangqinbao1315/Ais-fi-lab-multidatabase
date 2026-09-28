@@ -1,0 +1,14 @@
+result_block	authoritative_script	expected_headline
+MIMIC H92/H93/H94	MIMIC/MIMIC_00_RAW_TO_ANALYTIC_EXACT_FINAL.sql	H92 1741/189; H93 1666/183; H94 1665/183
+eICU 48/49/50	eICU/eICU_00_ONE_CLICK_RAW_TO_ANALYTIC_EXACT_FINAL.sql	48 2807/261; 49 2091/205; 50 2015/197; IMV 314; vasopressor 115
+SICdb 20/30/40/41/42	SICdb/SQL/SICdb_00_ONE_CLICK_RAW_TO_ANALYTIC_EXACT_FINAL.sql	all 33/9; FI-valid 30/8; exact frozen full-row pass
+Primary MIMIC interaction/additive/incremental	Analysis/01_MIMIC_PRIMARY_ASSOCIATION_INCREMENTAL_FINAL.R	interaction OR 1.032; LRT p 0.206; additive +0.321 pp; LR add-FI 28.819
+Functional form	Analysis/02_FUNCTIONAL_FORM_FINAL.R	MIMIC FI nonlinearity p 0.840; CCI p 0.609; eICU cluster-robust FI p 0.326; CCI p 0.610
+Broader AIS sensitivity	Analysis/03_BROADER_AIS_SENSITIVITY_FINAL.R	S1 n=2411 FI OR 1.343; S2/S3 n=4176 FI OR 1.308; interaction null
+Strict 24-h landmark	Analysis/04_STRICT_24H_LANDMARK_FINAL.R	MIMIC 1496/162 AUC 0.8380 Brier 0.08276 FI OR 1.366; eICU 1638/168 AUC 0.7800 (0.7435-0.8141), Brier 0.09195, intercept -0.468, slope 0.629
+eICU association sensitivities	Analysis/05_eICU_ASSOCIATION_SENSITIVITIES_FINAL.R	clustered FI OR 1.177; diagnosis-only FI OR 1.161; IPW FI OR 1.166; thresholds 14-18
+SICdb exploratory Firth	Analysis/06_SICdb_TRANSPORTABILITY_FINAL.R	executed logistf 1.26.1; profile-likelihood CI; FI OR 1.897992; age-adjusted FI OR 2.284600
+Reduced red-cell sensitivity	Analysis/07_REDUCED_RED_CELL_SAME_SAMPLE_FINAL.py	Core17 FI OR 1.405; Core16 FI OR 1.414; same H94 n=1665
+Expanded eICU FI-validity IPW + hospital overlap	Analysis/08_eICU_EXPANDED_IPW_OVERLAP_FINAL.R	full FI OR 1.174, interaction 0.979; overlap-hospital FI OR 1.195, interaction 0.972; 92 mixed hospitals
+MIMIC OASIS alternative severity adjustment	Analysis/09_MIMIC_OASIS_SEVERITY_FINAL.R	FI OR 1.360; interaction OR 1.011; LRT p 0.647; additive +0.126 pp
+Expanded eICU IPW balance diagnostics	Analysis/10_eICU_IPW_BALANCE_DIAGNOSTICS_FINAL.py	overlap-hospital max abs weighted SMD: clinical 0.003; missing indicators 0.028; hospital indicators 0.008

@@ -1,0 +1,16 @@
+check	pass
+MIMIC_no_server_COPY	1
+MIMIC_final_QC_present	1
+eICU_final_one_click_present	1
+SICdb_final_one_click_present	1
+strict_landmark_script_present	1
+functional_form_script_present	1
+broader_AIS_script_present	1
+eICU_sensitivity_script_present	1
+same_sample_reduced_FI_present	1
+old_V5_single_file_not_carried_forward	1
+expanded_eICU_IPW_overlap_script_present	1
+MIMIC_OASIS_sensitivity_script_present	1
+expanded_IPW_balance_script_present	1
+revision_stage_sessionInfo_present	1
+SICdb_authoritative_script_uses_logistf	1

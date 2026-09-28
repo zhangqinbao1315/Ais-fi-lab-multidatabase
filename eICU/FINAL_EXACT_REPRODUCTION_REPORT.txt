@@ -1,0 +1,76 @@
+S4 eICU — FINAL EXACT REPRODUCTION REPORT
+=========================================
+
+STATUS
+------
+PASS — raw-to-analytic eICU reconstruction is closed.
+
+COUNT-LEVEL REPRODUCTION
+------------------------
+eICU_15 candidate:
+  2,855
+
+eICU_25 primary cohort:
+  2,807
+  hospital deaths: 261
+  unitVisitNumber >1: 193
+
+eICU_48 analysis base:
+  2,807
+  hospital deaths: 261
+
+eICU_49 FI-valid cohort:
+  2,091
+  hospital deaths: 205
+
+eICU_50 complete-case cohort:
+  2,015
+  hospital deaths: 197
+  invasive ventilation positive: 314
+  vasopressor positive: 115
+
+FILE-LEVEL AUDIT
+----------------
+Authoritative frozen comparison:
+
+eICU_48:
+  rows: 2,807
+  columns: 105
+  patientUnitStayID set: exact
+  column names/order: exact
+  semantic cell mismatches across all 105 columns: 0
+
+eICU_49:
+  rows: 2,091
+  exact ID set obtained from frozen eICU_48 using FI-Lab-valid rule
+  all 105 columns: exact
+  semantic cell mismatches: 0
+
+eICU_50:
+  rows: 2,015
+  exact ID set obtained from frozen eICU_49 using the primary-model
+  complete-case rule
+  all 105 columns: exact
+  semantic cell mismatches: 0
+
+FINAL COHORT RULE
+-----------------
+Within each patientHealthSystemStayID:
+- select the first AVAILABLE ICU unit row by minimum unitVisitNumber,
+  patientUnitStayID as deterministic tie-breaker;
+- this is not equivalent to hard-requiring unitVisitNumber=1;
+- require adult age >=18;
+- require exact APACHE admission diagnosis:
+    CVA, cerebrovascular accident/stroke
+- require strict same-unit ICD-9 433.x1 or 434.x1;
+- then apply the historical eICU_25 patient-level chronology.
+
+FINAL FIELD ALIGNMENT
+---------------------
+APACHE IVa is selected with apacheVersion='IVa'.
+For apache_iva_score and apache_iva_aps, -1 is a missing-value sentinel
+and is converted to NULL before aggregation.
+
+The final reconstruction changes no frozen scientific endpoint or
+primary-model definition; it documents the actual historical data
+construction needed for exact reproducibility.

@@ -1,0 +1,19 @@
+lab_name	preferred_LaboratoryID	fallback_LaboratoryID	conversion_to_harmonized	primary_role
+wbc	301		identity	preferred_strict
+hemoglobin	289	658	identity	preferred_strict + BGA fallback sensitivity
+hematocrit	217	682	identity	preferred_strict + BGA fallback sensitivity
+platelet	314		identity	preferred_strict
+rbc	599		identity	preferred_strict
+mcv	286		identity	preferred_strict
+sodium	469		identity	preferred_strict; no BGA fallback
+potassium	463	685	identity	preferred_strict + BGA fallback sensitivity
+chloride	450	683	identity	preferred_strict + BGA fallback sensitivity
+bicarbonate	666		identity	preferred_strict
+bun	355		x0.467	preferred_strict
+creatinine	367		identity	preferred_strict
+glucose	348	656	identity	preferred_strict + BGA fallback sensitivity
+calcium	457		x4.0078	preferred_strict
+magnesium	468		x2.4305	preferred_strict
+phosphate	471		x3.0969	preferred_strict
+inr	3128		identity	preferred_strict
+aptt	597		identity	preferred_strict

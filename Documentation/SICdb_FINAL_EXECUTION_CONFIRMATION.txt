@@ -1,0 +1,30 @@
+SICdb FINAL EXECUTION CONFIRMATION
+=================================
+
+The corrected authoritative logistf script was executed by the authors
+against the frozen SICdb analytic CSVs in R 4.6.0 with logistf 1.26.1.
+
+Frozen benchmark:
+- analysis base: 33 patients / 9 deaths
+- FI-Lab-valid: 30 patients / 8 deaths
+- available-covariate complete case: 30 patients
+
+Authoritative Firth results reproduced:
+1. FI-Lab only
+   OR per +0.1 = 1.897992
+   profile-likelihood 95% CI = 1.094603 to 3.783797
+   p = 0.021328
+
+2. FI-Lab + age
+   FI-Lab OR per +0.1 = 2.284600
+   profile-likelihood 95% CI = 1.173258 to 6.056660
+   p = 0.012484
+
+The first execution of the corrected script exposed only an OUTPUT-FORMATTING
+issue: model-level method fields were vectors, which caused duplicated rows in
+the summary CSV despite identical correct estimates. The final script fixes
+this by writing scalar labels ("Profile Likelihood" and "Penalized ML"), so
+each model produces exactly one result row.
+
+No statistical estimate, cohort, model formula, CI method, or manuscript value
+was changed by this formatting correction.

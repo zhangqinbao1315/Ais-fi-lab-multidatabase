@@ -1,0 +1,10 @@
+check	pass
+no_hard_unitvisitnumber_eq_1	1
+first_available_unit_partition_present	1
+strict_same_unit_icd_regex_present	1
+apache_version_iva_present	1
+apache_score_sentinel_null	1
+apache_aps_sentinel_null	1
+count_qc_present	1
+field_qc_present	1
+no_server_side_copy	1

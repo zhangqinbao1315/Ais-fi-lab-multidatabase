@@ -1,0 +1,5 @@
+analysis	n	deaths	scale	headline_estimate	note
+eICU expanded IPW full	2015	197	FI OR	1.174 (1.019-1.353)	interaction 0.979 (0.929-1.031)
+eICU expanded IPW overlap hospitals	1828	180	FI OR	1.195 (1.025-1.393)	interaction 0.972 (0.920-1.026)
+MIMIC OASIS severity sensitivity	1665	183	FI OR	1.360 (1.198-1.544)	interaction 1.011 (0.965-1.059); LRT p=0.647
+MIMIC OASIS additive interaction	1665	183	percentage points	+0.126 (-0.265 to +0.504)	5000 parametric draws

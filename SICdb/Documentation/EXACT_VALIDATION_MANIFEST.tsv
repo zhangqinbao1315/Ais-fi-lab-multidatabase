@@ -1,0 +1,8 @@
+stage	candidate_n	frozen_n	overlap_n	extra_n	missing_n	fullrow_mismatch_n	exact_id_pass	exact_fullrow_pass
+SICdb_20_primary_AIS	33	33	33	0	0	0	1	1
+SICdb_30_FI_Lab_variants	66	66	66	0	0	0	1	1
+SICdb_40_chronic_proxy	33	33	33	0	0	0	1	1
+SICdb_41_firstday_support	33	33	33	0	0	0	1	1
+SICdb_42_analysis_base_all	33	33	33	0	0	0	1	1
+SICdb_42_primary_FI	30	30	30	0	0	0	1	1
+SICdb_42_available_completecase	30	30	30	0	0	0	1	1
